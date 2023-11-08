@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
 
     while (ui.ShouldQuit() == false) {
         // 更新自身位置
-        Vec3d v_world = pose.so3() * v_body;
+        Vec3d v_world = pose.so3() * v_body;//此V1 = R12(omge^ * P2 + V2) 中P2为原点
         pose.translation() += v_world * dt;
 
         // 更新自身旋转
